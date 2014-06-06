@@ -1,0 +1,17 @@
+.navbar{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+   color: white;
+}
+li {
+	display: inline;
+	color: red;
+	margin-right: 10%;
+
+}
+#lastnav{
+	/*position:fixed;
+	rig*/ht :;
+}
