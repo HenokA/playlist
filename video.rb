@@ -29,7 +29,6 @@ post '/sets' do
 	puts "1111111111111111111111111111111111111111"
 	puts "am i here " + params[:comment] + "Hello"
 	session[:commentarr].push(params[:comment])
-	puts session[:commentarr]
 	erb :sets, :locals => { :commentarr => session[:commentarr]}
 
 end

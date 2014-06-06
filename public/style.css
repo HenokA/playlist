@@ -1,9 +1,18 @@
+html { 
+  background: url(http://hotwallpaperhd.com/wp-content/uploads/2013/08/Ariana-Grande-2013-HD-Wallpaper-1440x810.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .navbar{
+	font-family: 'Lobster', cursive;
 	list-style-type: none;
     margin: 0;
     padding: 0;
     width: 100%;
-   color: white;
+    color: white;
 }
 li {
 	display: inline;
