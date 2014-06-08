@@ -6,21 +6,121 @@ html {
   background-size: cover;
 }
 
-.navbar{
-	font-family: 'Lobster', cursive;
-	list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    color: white;
-}
-li {
-	display: inline;
-	color: red;
-	margin-right: 10%;
+body{
+  margin: 0;
+  padding: 0;
 
 }
-#lastnav{
-	/*position:fixed;
-	rig*/ht :;
+
+/*First navbar div*/
+
+#nav{
+  opacity: 0.5;
+  width: 100%;
+  top: 0px;
+  display: block;
+  background-color: black;
+  color: white;
+  padding: 10px;
 }
+
+.navbar{
+	  font-family: 'Lobster', cursive;
+    font-size: 30px;
+    width: 100%;
+    color: white;
+    
+}
+
+/*Second navbar div*/
+#navcontainer{
+    background-color: white;
+}
+
+/*Navbar text*/
+a{
+  color: white;
+  text-decoration: none;
+}
+
+a:hover{
+  font-size: 33px;
+
+/*Navbar div styling*/
+}
+
+.navb{
+  border-style: groove;
+  margin: 55px;
+  padding-right: 8px;
+  padding-left: 8px;
+  display: inline;
+  opacity: 1.0;
+  text-align: center;
+  width: 50px;
+  background-color: black;
+}
+
+.navb:hover{
+  width: 65px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+/*Symbol*/
+.symb{
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+/*video*/
+
+#vid{
+  opacity: 0.7;
+  border: solid;
+  border-radius: 10px;
+  border-width: 5px;
+  display: inline;
+  margin-left: 60px
+
+}
+
+#vid:hover{
+  transition-duration: 2s;
+  opacity: 1.0;
+
+}
+
+/*Form*/
+form{
+  margin: 20px;
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+  color: purple;
+}
+
+#tb{
+  opacity: 0.9;
+  background:orange;
+  border-width:4px 30px 4px 30px;
+  border-style: solid;
+  border-color: #56c6d9 #56c6d9 #fe2192 #fe2192;
+  border-radius:0 120px 0 120px;
+  -moz-border-radius:0 120px 0 120px;
+  -webkit-border-radius:0 120px 0 120px;
+  background-color: pink;
+  width: 550px;
+  text-align: center;
+  padding: 1px;
+  margin-left: 25px;
+}
+
+textarea{
+  margin-left: 220px;
+  margin-top: 10px;
+}
+
+
+
+
+
