@@ -19,18 +19,18 @@ get '/sets/new' do
 	erb :newsets
 end
 get '/sets' do
-	erb :sets
+	erb :sets, :locals => {:commentarr => session[:commentarr] || []}
 end
 post '/sets' do
 	# binding.pry
 	if session[:commentarr] == nil
-		session[:commentarr]=Array.new
+		session[:commentarr] = []
 	end
-	puts "1111111111111111111111111111111111111111"
-	puts "am i here " + params[:comment] + "Hello"
-	session[:commentarr].push(params[:comment])
+
+	session[:commentarr] = session[:commentarr] + [params[:comment]]
 	erb :sets, :locals => { :commentarr => session[:commentarr]}
 
 end
+
 
 

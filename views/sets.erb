@@ -10,6 +10,8 @@
 				<li><a href="http://localhost:4567/sets/beyonce/play"> New Playlist </a></li>
 				<li><a id = "lastnav" href="http://localhost:4567/sets/beyonce/edit">Last </a></li>
 		</ul>
-				 <p><%= commentarr %></p>	
+		<% commentarr.each do |element| %>
+			<p><%= element %></p>
+		<%end%>	
  </body>
 </html>
