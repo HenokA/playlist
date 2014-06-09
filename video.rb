@@ -1,6 +1,6 @@
 require 'sinatra'
 configure do
-	enable :session
+	enable :sessions
 end
 
 def makeplaylist
@@ -19,15 +19,13 @@ get '/sets/new' do
 	erb :newsets
 end
 get '/sets' do
-	erb :sets, :locals => {:commentarr => session[:commentarr] || []}
+	session[:commentarr] ||= []
+	erb :sets, :locals => { :commentarr => session[:commentarr]}
 end
 post '/sets' do
 	# binding.pry
-	if session[:commentarr] == nil
-		session[:commentarr] = []
-	end
-
-	session[:commentarr] = session[:commentarr] + [params[:comment]]
+	session[:commentarr] ||= []
+	session[:commentarr].push(params[:comment])
 	erb :sets, :locals => { :commentarr => session[:commentarr]}
 
 end
