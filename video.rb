@@ -26,25 +26,20 @@ post '/sets' do
 	session[:commentarr].push(params[:title])
 	session[:commentarr].push(params[:comment])
 	erb :sets, :locals => { :commentarr => session[:commentarr]}
-
 end
-get '/sets/beyonce' do
-
+get '/sets/:name' do
+	a=session[:commentarr].each_slice(2)
+	title = "false"
+	videos = "false"
+	puts "hello"
+	a.each do |element|	
+		if params[:name].downcase.to_s == element[0].downcase.to_s
+			puts "I got it"
+			title = element[0]
+			videos = element[1]
+		else
+			puts "didnt work"
+		end
+	end
+	erb :individual, :locals => {:title => title, :videos => videos}
 end
-
-get '/sets/beyonce/play' do
-
-end
-
-get '/sets/beyonce/edit' do
-
-end
-
-put '/sets/beyonce' do
-
-end
-
-delete '/sets/beyonce' do
-
-end
-
