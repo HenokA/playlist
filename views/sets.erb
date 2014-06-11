@@ -15,8 +15,10 @@
 		</ul>
 	  </div>
 	</div>
-		<% commentarr.each do |element| %>
-			<p><%= element %></p>
-		<%end%>	
+		<% a=commentarr.each_slice(2) %>
+
+		<% a.each do |element|%>
+			<p><%= element[0]  %></p>
+		<%end%>
  </body>
 </html>

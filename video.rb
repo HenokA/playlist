@@ -1,8 +1,8 @@
 require 'sinatra'
+require 'sinatra/reloader'
 configure do
 	enable :sessions
 end
-
 def makeplaylist
 	url = ["sJMBd5z9Ki4", 
 			"iS1g8G_njx8", 
@@ -12,7 +12,6 @@ def makeplaylist
 end
 get '/' do
 	url = makeplaylist
-	url = "https://www.youtube.com/embed/" + url
 	erb :index, :locals =>{:url => url}
 end
 get '/sets/new' do
@@ -23,12 +22,29 @@ get '/sets' do
 	erb :sets, :locals => { :commentarr => session[:commentarr]}
 end
 post '/sets' do
-	# binding.pry
 	session[:commentarr] ||= []
+	session[:commentarr].push(params[:title])
 	session[:commentarr].push(params[:comment])
 	erb :sets, :locals => { :commentarr => session[:commentarr]}
 
 end
+get '/sets/beyonce' do
 
+end
 
+get '/sets/beyonce/play' do
+
+end
+
+get '/sets/beyonce/edit' do
+
+end
+
+put '/sets/beyonce' do
+
+end
+
+delete '/sets/beyonce' do
+
+end
 

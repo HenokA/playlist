@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="../style.css">
 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
@@ -15,10 +15,6 @@
 		</ul>
 	  </div>
 	</div>
-		<form method="post" action="/set">
-			<div id="tb"><p>Please enter the code of the video you would like to see</p></div>
-			<textarea name="comment" form="usrform">Enter text here...</textarea>			
-		</form>
-		<iframe id="vid" width="560" height="315" src= <%= url %> frameborder="0" allowfullscreen></iframe>
+		<iframe id="vid" width="800" height="500" src= "https://www.youtube.com/embed/"+<%= url %> frameborder="0" allowfullscreen></iframe>
 	</body>
 </html>
