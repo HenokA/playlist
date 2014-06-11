@@ -1,26 +1,6 @@
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="../style.css">
-		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-	</head>
-	<body>
-	<div id="nav">
-	  <div id="navcontainer">
-		<ul class = "navbar">
-				
-				<center><img class="symb"src="symb.png"><div class= "navb" id="nav2"><a href="http://localhost:4567/"> Home </a></div> <img class="symb"src="symb.png">
-				<div class= "navb" id="nav1"><a href="http://localhost:4567/sets"> Sets </a></div> <img class="symb"src="symb.png">
-				<div class= "navb" id="nav3"><a href="http://localhost:4567/sets/beyonce"> Beyonce </a></div> <img class="symb"src="symb.png">
-				<div class= "navb" id="nav4"><a href="http://localhost:4567/sets/beyonce/play"> play </a></div> <img class="symb"src="symb.png">
-				<div class= "navb" id="nav5"><a id = "lastnav" href="http://localhost:4567/sets/beyonce/edit">Last </a></div><img class="symb"src="symb.png"></center>
-		</ul>
-	  </div>
-	</div>
-		<form method="post" action="/sets">
-			<div id="tb"><p>Please enter the code of the video you would like to see</p></div>
-			<input type= "text" name="title" placeholder = "Title Here">
-			<textarea name="comment" placeholder="Enter video url"></textarea>
-			<input type="submit">				
-		</form>		
-	</body>
-
+<form method="post" action="/sets">
+	<div id="tb"><p>Please enter the code of the video you would like to see</p></div>
+	<input type= "text" name="title" placeholder = "Title Here">
+	<textarea name="comment" placeholder="Enter video url"></textarea>
+	<input type="submit">				
+</form>		

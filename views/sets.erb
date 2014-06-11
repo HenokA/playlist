@@ -1,28 +1,9 @@
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-	</head>
-	<body>
-	<div id="nav">
-	  <div id="navcontainer">
-		<ul class = "navbar">
-				<center><img class="symb"src="symb.png"><div class= "navb" id="nav1"><a href="http://localhost:4567"> Home </a></div> <img class="symb"src="symb.png">
-				<div class= "navb" id="nav2"><a href="http://localhost:4567/sets/new"> New Playlist </a></div> <img class="symb"src="symb.png">
-				<div class= "navb" id="nav3"><a href="http://localhost:4567/sets/beyonce"> Beyonce </a></div> <img class="symb"src="symb.png">
-				<div class= "navb" id="nav4"><a href="http://localhost:4567/sets/beyonce/play"> Play </a></div> <img class="symb"src="symb.png">
-				<div class= "navb" id="nav5"><a id = "lastnav" href="http://localhost:4567/sets/beyonce/edit">Last </a></div><img class="symb"src="symb.png"></center>
-		</ul>
-	  </div>
-	</div>
-		<% a=commentarr.each_slice(2) %>
-		<% a.each do |element|%>
-			<h1><%= element[0]  %></h1>
-			<% videos = element[1].split("\n") %>
-			<% videos.each do |vid| %>
-			<% puts vid %>
-				<iframe id="vid" width="400" height="300" src= <%="https://www.youtube.com/embed/"+vid.to_s%> frameborder="0" allowfullscreen></iframe>
-			<% end %>
-		<%end%>
- </body>
-</html>
+<% a=commentarr.each_slice(2) %>
+<% a.each do |element|%>
+	<h1 id="change"><%= element[0]  %></h1>
+	<% videos = element[1].split("\n") %>
+	<% videos.each do |vid| %>
+	<% puts vid %>
+		<iframe id="vid" width="400" height="300" src= <%="https://www.youtube.com/embed/"+vid.to_s%> frameborder="0" allowfullscreen></iframe>
+	<% end %>
+<%end%>
