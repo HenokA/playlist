@@ -22,7 +22,6 @@ body{
   background-color: black;
   color: white;
   padding: 10px;
-  position: fixed;
 }
 
 .navbar{
@@ -30,14 +29,12 @@ body{
   font-size: 30px;
   width: 100%;
   color: white;
-  position: fixed;
   top: 0px;
 }
 
 /*Second navbar div*/
 #navcontainer{
   background-color: white;
-  position: fixed;
   top: 0px;
 }
 
