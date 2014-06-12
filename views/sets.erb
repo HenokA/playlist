@@ -3,7 +3,6 @@
 	<h1 id="change"><%= element[0]  %></h1>
 	<% videos = element[1].split("\n") %>
 	<% videos.each do |vid| %>
-	<% puts vid %>
 		<iframe id="vid" width="400" height="300" src= <%="https://www.youtube.com/embed/"+vid.to_s%> frameborder="0" allowfullscreen></iframe>
 	<% end %>
 <%end%>

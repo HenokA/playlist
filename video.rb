@@ -1,41 +1,26 @@
 require 'sinatra'
 require 'sinatra/reloader'
 configure do
-	enable :sessions
+  enable :sessions
 end
 get '/sets/new' do
-	erb :newsets
+  erb :newsets
 end
 get '/sets' do
-	session[:commentarr] ||= []
-	erb :sets, :locals => { :commentarr => session[:commentarr]}
+  session[:commentarr] ||= []
+  erb :sets, :locals => {:commentarr => session[:commentarr]}
 end
 post '/sets' do
-	session[:commentarr] ||= []
-	title = "false"
-	if session[:commentarr] != []
-			a=session[:commentarr].each_slice(2)
-			videos = "false"
-			a.each do |element|	
-				if params[:name].downcase.to_s == element[0].downcase.to_s
-					title = element[0]
-					videos = element[1]
-				end
-			end
-	end
-	if title != false
-		session[:commentarr].delete(title)
-		session[:commentarr].delete(videos)
-	end
-	session[:commentarr].unshift(params[:title])
-	session[:commentarr].unshift(params[:comment])
-
+  session[:commentarr] ||= []
+  
+	session[:commentarr].push(params[:title])
+	session[:commentarr].push(params[:comment])
 	erb :sets, :locals => { :commentarr => session[:commentarr]}
 end
 get '/sets/:name' do
 	a=session[:commentarr].each_slice(2)
-	title = "false"
-	videos = "false"
+	  title = "false"
+	  videos = "false"
 	a.each do |element|	
 		if params[:name].downcase.to_s == element[0].downcase.to_s
 			title = element[0]
@@ -63,7 +48,7 @@ get '/sets/:name/play' do
 				url = url + videos[count].to_s + ", " 
 				count +=1 
  		end 
- 		redirect url.to_s
+ 		redirect url
 			# erb :index, :locals => {:title => url}
 
 end
