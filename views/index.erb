@@ -1,0 +1,13 @@
+<% videos = videos.split("\n") %>
+<% rando = Random.new(videos.length) %>
+<% count = 0 %>
+<% videos.each do |vid| %>
+	<%if rando == count%>
+	<%puts "anis"%>
+			<iframe id="vid" width="400" height="300" src= <%="https://www.youtube.com/embed/"+vid.to_s+"?rel=0&autoplay=1" %> frameborder="0" allowfullscreen></iframe>
+	<%else %>
+		<iframe id="vid" width="400" height="300" src= <%="https://www.youtube.com/embed/"+vid.to_s%> frameborder="0" allowfullscreen></iframe>
+		<% end %>
+	<% count +=1 %>
+<% end %>
+<input method="get" value="get" type="submit" action=<%= "/sets/" + title + "/play">
