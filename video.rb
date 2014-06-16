@@ -1,23 +1,29 @@
+Rack::MethodOverride
 require 'sinatra'
 require 'sinatra/reloader'
 require 'enumerator'
 configure do
   enable :sessions
 end
+#Takes you to the starting page at /sets if you load
+#to the normal homepage
 get '/' do
 	redirect 'http://localhost:4567/sets'
 end
+
 get '/sets/new' do
   erb :newsets
 end
+
+#Sets
 get '/sets' do
   session[:commentarr] ||= []
-  puts "get"
+  # puts "get"
   erb :sets, :locals => {:commentarr => session[:commentarr]}
 end
 post '/sets' do
   session[:commentarr] ||= []
-  puts 'post'
+  # puts 'post'
 	session[:commentarr].push(params[:title])
 	session[:commentarr].push(params[:comment])
 	erb :sets, :locals => { :commentarr => session[:commentarr]}
@@ -113,5 +119,20 @@ post '/sets/:name' do
 	# end
 
 	erb :individual, :locals => {:title => title, :videos => videos}
-		
 end
+
+# delete 'sets/:name' do
+# a=session[:commentarr].each_slice(2)
+# 	  title = "false"
+# 	  videos = "false"
+# 	a.each do |element|	
+# 		if params[:name].downcase.to_s == element[0].downcase.to_s
+# 			a.delete_at(0)
+# 			videos = element[1]
+		
+# 		end
+# 	end
+# 	erb :individual, :locals => {:title => title, :videos => videos}
+# end		
+
+	

@@ -1,4 +1,9 @@
 <h1><%= title  %></h1>
 <% videos.each do |vid| %>
 	<iframe id="vid" width="400" height="300" src= <%="https://www.youtube.com/embed/"+vid.to_s%> frameborder="0" allowfullscreen></iframe>
+
+	<!-- form method="post" action="/sets"> 
+	<input  name="_method" value="delete" type="hidden" action="/sets">
+    <button type="submit">Delete</button>
+</form> -->
 <% end %>
