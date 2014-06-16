@@ -1,8 +1,7 @@
 <% a=commentarr.each_slice(2) %>
 <% a.each do |element|%>
 	<h1 id="change"><%= element[0]  %></h1>
-	<% videos = element[1].split("\n") %>
-	<% puts videos%><!--This is the problematic line. After the vide is edited, it sometimes changes title to element[1] instead of element cero. Also it makes the array a string instead of an array. -->
+	<% videos = element[1].split("\r\n") %>
 	<% videos.each do |vid| %>
 		<iframe id="vid" width="400" height="300" src= <%="https://www.youtube.com/embed/"+vid.to_s%> frameborder="0" allowfullscreen></iframe>
 	<% end %>
